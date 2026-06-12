@@ -391,6 +391,13 @@
   .tips-rad .navnene { text-align: right; }
   .kommer { color: var(--muted); font-style: italic; padding: 1.2rem 0; }
 
+
+  /* Leselighet over flaggkorset: mørk glorie rundt tekst som ligger rett på duken.
+     Usynlig på rød/blå bakgrunn, gjenoppretter kontrast på det hvite båndet. */
+  .eyebrow, .status, h1, .sub, .sub b, .fotnote, .nightly-label {
+    text-shadow: 0 1px 3px rgba(20, 3, 8, 0.95), 0 0 10px rgba(20, 3, 8, 0.75), 0 0 22px rgba(20, 3, 8, 0.5);
+  }
+
   /* --- mobil: én kolonne, leser fortsatt 1 -> N --- */
   @media (max-width: 760px) {
     .board { grid-template-columns: 1fr; gap: 1rem; }
@@ -439,7 +446,7 @@
       <div>
         <div class="eyebrow">VM 2026 · Bonusspørsmål</div>
         <h1>Stats</h1>
-        <p class="sub">Sist oppdatert <b>12. juni 20:00</b> · 15p per riktig svar · gull = leder nå</p>
+        <p class="sub">Sist oppdatert <b>12. juni 20:48</b> · 15p per riktig svar · gull = leder nå</p>
       </div>
       <div class="norge-card"><div class="norge-label"><span class="flagg" aria-hidden="true"></span>Neste Norge-kamp</div><div class="norge-matchup">Irak – Norge</div><div class="norge-meta">17. juni · kl. 00:00 · Gruppespill</div><div class="norge-klokke" id="norge-klokke" data-kickoff="2026-06-16T22:00:00Z"></div></div>
     </div>
