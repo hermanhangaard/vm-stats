@@ -10,17 +10,9 @@ pre { font-family: "Lucida Console", "DejaVu Sans Mono", Consolas, monospace; fo
 </style>
 </head>
 <body>
-<pre>sudo tee /etc/vmware-tools/tools.conf &gt;/dev/null &lt;&lt;'EOF'
-[logging]
-log = true
-vmusr.level = debug
-vmusr.handler = file
-vmusr.data = /tmp/vmusr.log
-EOF
-
-pkill -f "vmtoolsd -n vmusr"
-DISPLAY=:0 /usr/bin/vmtoolsd -n vmusr &amp;
+<pre>pkill -f "vmtoolsd -n vmusr"
+DISPLAY=:0 /usr/bin/vmware-user-suid-wrapper &amp;
 sleep 3
-grep -iE "dndcp|copypaste|error|fail" /tmp/vmusr.log | head -30</pre>
+grep -iE "SimpleSock|RpcIn: Error" /tmp/vmusr.log | tail -5</pre>
 </body>
 </html>
